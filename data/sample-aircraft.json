@@ -1,0 +1,38 @@
+[
+  {
+    "icao24": "a1b2c3",
+    "callsign": "DAL123",
+    "latitude": 33.6407,
+    "longitude": -84.4277,
+    "altitude": 32000,
+    "velocity": 430,
+    "origin_country": "United States"
+  },
+  {
+    "icao24": "d4e5f6",
+    "callsign": "AAL456",
+    "latitude": 33.9416,
+    "longitude": -118.4085,
+    "altitude": 28000,
+    "velocity": 410,
+    "origin_country": "United States"
+  },
+  {
+    "icao24": "g7h8i9",
+    "callsign": "UAL789",
+    "latitude": 35.2140,
+    "longitude": -80.9431,
+    "altitude": 35000,
+    "velocity": 445,
+    "origin_country": "United States"
+  },
+  {
+    "icao24": "j1k2l3",
+    "callsign": "SWA222",
+    "latitude": 32.8998,
+    "longitude": -97.0403,
+    "altitude": 25000,
+    "velocity": 395,
+    "origin_country": "United States"
+  }
+]
