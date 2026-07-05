@@ -77,4 +77,10 @@ body {
     border-right: none;
     border-bottom: 1px solid #dbe3ee;
   }
+  .plane-marker {
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+  }
 }

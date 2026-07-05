@@ -5,6 +5,14 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
 
+const planeIcon = L.divIcon({
+  html: "✈️",
+  className: "plane-marker",
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
+  popupAnchor: [0, -16],
+});
+
 const aircraftCountEl = document.getElementById("aircraft-count");
 const lastRefreshEl = document.getElementById("last-refresh");
 const aircraftDetailsEl = document.getElementById("aircraft-details");
