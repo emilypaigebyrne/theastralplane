@@ -6,6 +6,7 @@
     "longitude": -84.4277,
     "altitude": 32000,
     "velocity": 430,
+    "heading": 90,
     "origin_country": "United States"
   },
   {
@@ -15,6 +16,7 @@
     "longitude": -118.4085,
     "altitude": 28000,
     "velocity": 410,
+    "heading": 127,
     "origin_country": "United States"
   },
   {
@@ -24,6 +26,7 @@
     "longitude": -80.9431,
     "altitude": 35000,
     "velocity": 445,
+    "heading": 324,
     "origin_country": "United States"
   },
   {
@@ -33,6 +36,7 @@
     "longitude": -97.0403,
     "altitude": 25000,
     "velocity": 395,
+    "heading": 35,
     "origin_country": "United States"
   }
 ]

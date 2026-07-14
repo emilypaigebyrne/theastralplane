@@ -30,6 +30,7 @@ function renderAircraftDetails(aircraft) {
       <p><strong>Altitude:</strong> ${formatValue(aircraft.altitude)} ft</p>
       <p><strong>Velocity:</strong> ${formatValue(aircraft.velocity)} knots</p>
       <p><strong>Origin Country:</strong> ${formatValue(aircraft.origin_country)}</p>
+      <p>Heading: ${aircraft.heading}°</p>
     </div>
   `;
 }
@@ -51,6 +52,7 @@ function addAircraftToMap(aircraftList) {
       <strong>${formatValue(aircraft.callsign, "Unknown Flight")}</strong><br>
       Altitude: ${formatValue(aircraft.altitude)} ft<br>
       Speed: ${formatValue(aircraft.velocity)} knots
+      Heading: ${aircraft.heading}°
     `);
 
     marker.on("click", () => {
