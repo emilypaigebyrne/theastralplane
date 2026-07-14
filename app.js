@@ -1,4 +1,4 @@
-const map = L.map("map").setView([33.6146, -85.8349], 6); // Starts near Oxford, AL
+const map = L.map("map").setView([33.6146, -85.8349], 6);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -6,7 +6,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 const planeIcon = L.divIcon({
-  html: "✈️",
+  html: "🛩️",
   className: "plane-marker",
   iconSize: [32, 32],
   iconAnchor: [16, 16],
@@ -53,7 +53,9 @@ function addAircraftToMap(aircraftList) {
       return;
     }
 
-    const marker = L.marker([aircraft.latitude, aircraft.longitude]).addTo(map);
+    const marker = L.marker([aircraft.latitude, aircraft.longitude], {
+      icon: planeIcon,
+    }).addTo(map);
 
     marker.bindPopup(`
       <strong>${formatValue(aircraft.callsign, "Unknown Flight")}</strong><br>
