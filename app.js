@@ -54,15 +54,29 @@ function addAircraftToMap(aircraftList) {
       return;
     }
 
+    const heading = aircraft.heading ?? 0;
+    const rotation = heading - 45;
+
+    const rotatedPlaneIcon = L.divIcon({
+      className: "plane-marker",
+      html: `
+        <div style="transform: rotate(${rotation}deg);">
+          ✈️
+        </div>
+      `,
+      iconSize: [30, 30],
+      iconAnchor: [15, 15],
+    });
+
     const marker = L.marker([aircraft.latitude, aircraft.longitude], {
-      icon: planeIcon,
+      icon: rotatedPlaneIcon,
     }).addTo(map);
 
     marker.bindPopup(`
       <strong>${formatValue(aircraft.callsign, "Unknown Flight")}</strong><br>
       Altitude: ${formatValue(aircraft.altitude)} ft<br>
-      Speed: ${formatValue(aircraft.velocity)} knots
-      Heading: ${aircraft.heading}°
+      Speed: ${formatValue(aircraft.velocity)} knots<br>
+      Heading: ${formatValue(aircraft.heading)}°
     `);
 
     marker.on("click", () => {
