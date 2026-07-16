@@ -7,7 +7,8 @@
     "altitude": 32000,
     "velocity": 430,
     "heading": 90,
-    "origin_country": "United States"
+    "origin_country": "United States",
+    "location": "Atlanta, Georgia"
   },
   {
     "icao24": "d4e5f6",
@@ -17,7 +18,8 @@
     "altitude": 28000,
     "velocity": 410,
     "heading": 127,
-    "origin_country": "United States"
+    "origin_country": "United States",
+    "location": "Los Angeles, California"
   },
   {
     "icao24": "g7h8i9",
@@ -27,7 +29,8 @@
     "altitude": 35000,
     "velocity": 445,
     "heading": 324,
-    "origin_country": "United States"
+    "origin_country": "United States",
+    "location": "Charlotte, North Carolina"
   },
   {
     "icao24": "j1k2l3",
@@ -37,6 +40,7 @@
     "altitude": 25000,
     "velocity": 395,
     "heading": 35,
-    "origin_country": "United States"
+    "origin_country": "United States",
+    "location": "Dallas, Texas"
   }
 ]

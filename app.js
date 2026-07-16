@@ -29,18 +29,37 @@ function formatValue(value, fallback = "N/A") {
 }
 
 function renderAircraftDetails(aircraft) {
+  const callsign = formatValue(aircraft.callsign, "Unknown Flight");
+const altitude = formatValue(aircraft.altitude, "Unknown");
+const speed = formatValue(aircraft.velocity, "Unknown");
+const country = formatValue(aircraft.origin_country, "Unknown");
+const location = formatValue(aircraft.location, "Unknown");
   aircraftDetailsEl.innerHTML = `
-    <div class="detail-card">
-      <p><strong>Call Sign:</strong> ${formatValue(aircraft.callsign)}</p>
-      <p><strong>ICAO24:</strong> ${formatValue(aircraft.icao24)}</p>
-      <p><strong>Latitude:</strong> ${formatValue(aircraft.latitude)}</p>
-      <p><strong>Longitude:</strong> ${formatValue(aircraft.longitude)}</p>
-      <p><strong>Altitude:</strong> ${formatValue(aircraft.altitude)} ft</p>
-      <p><strong>Velocity:</strong> ${formatValue(aircraft.velocity)} knots</p>
-      <p><strong>Origin Country:</strong> ${formatValue(aircraft.origin_country)}</p>
-      <p>Heading: ${aircraft.heading}°</p>
+  <div class="detail-card">
+    <p class="detail-label">Selected Aircraft</p>
+    <h2 class="aircraft-callsign">${callsign}</h2>
+
+    <div class="detail-row">
+      <span class="detail-label">Altitude</span>
+      <span class="detail-value">${altitude} ft</span>
     </div>
-  `;
+
+    <div class="detail-row">
+      <span class="detail-label">Speed</span>
+      <span class="detail-value">${speed} knots</span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Country</span>
+      <span class="detail-value">${country}</span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Location</span>
+      <span class="detail-value">${location}</span>
+    </div>
+  </div>
+`;
 }
 
 function addAircraftToMap(aircraftList) {

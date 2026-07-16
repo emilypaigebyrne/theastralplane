@@ -63,10 +63,6 @@ body {
   height: 100%;
 }
 
-.detail-card p {
-  margin: 8px 0;
-}
-
 .plane-marker {
   font-size: 28px;
   line-height: 32px;
@@ -76,19 +72,35 @@ body {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: 220px 1fr;
-  }
+.detail-card {
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #dddddd;
+}
 
-  .sidebar {
-    border-right: none;
-    border-bottom: 1px solid #dbe3ee;
-  }
+.aircraft-callsign {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
 
-  .plane-marker {
-    font-size: 24px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
-  }
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.detail-value {
+  text-align: right;
 }
