@@ -16,6 +16,7 @@ const planeIcon = L.divIcon({
 const aircraftCountEl = document.getElementById("aircraft-count");
 const lastRefreshEl = document.getElementById("last-refresh");
 const aircraftDetailsEl = document.getElementById("aircraft-details");
+const refreshButton = document.getElementById("refresh-button");
 
 let markers = [];
 
@@ -108,6 +109,10 @@ function addAircraftToMap(aircraftList) {
   aircraftCountEl.textContent = markers.length.toString();
   lastRefreshEl.textContent = new Date().toLocaleTimeString();
 }
+
+refreshButton.addEventListener("click", () => {
+  loadSampleData();
+});
 
 async function loadSampleData() {
   try {

@@ -103,4 +103,17 @@ body {
 
 .detail-value {
   text-align: right;
+
+  #refresh-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#refresh-button:hover {
+  opacity: 0.85;
+}
 }
