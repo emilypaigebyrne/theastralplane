@@ -117,4 +117,36 @@ body {
 #refresh-button:hover {
   opacity: 0.85;
 }
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #f4f7fb;
+  border-bottom: 1px solid #d9e0ea;
+}
+
+.filter-controls label {
+  font-weight: 700;
+}
+
+.filter-controls input {
+  padding: 8px 10px;
+  border: 1px solid #b8c2d1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-controls button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-controls button:hover {
+  opacity: 0.85;
+}
 }
