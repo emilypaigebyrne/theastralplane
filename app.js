@@ -5,6 +5,8 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
 
+let allAircraft = [];
+
 const planeIcon = L.divIcon({
   html: "🛩️",
   className: "plane-marker",
@@ -17,6 +19,9 @@ const aircraftCountEl = document.getElementById("aircraft-count");
 const lastRefreshEl = document.getElementById("last-refresh");
 const aircraftDetailsEl = document.getElementById("aircraft-details");
 const refreshButton = document.getElementById("refresh-button");
+const callsignFilterEl = document.getElementById("callsign-filter");
+const applyFilterButton = document.getElementById("apply-filter-button");
+const clearFilterButton = document.getElementById("clear-filter-button");
 
 let markers = [];
 
@@ -123,7 +128,10 @@ async function loadSampleData() {
     }
 
     const aircraftList = await response.json();
-    addAircraftToMap(aircraftList);
+
+    allAircraft = aircraftList;
+
+    addAircraftToMap(allAircraft);
   } catch (error) {
     console.error("Failed to load aircraft data:", error);
     aircraftDetailsEl.innerHTML = `
@@ -133,5 +141,26 @@ async function loadSampleData() {
     `;
   }
 }
+
+function applyCallsignFilter() {
+  const filterValue = callsignFilterEl.value.trim().toLowerCase();
+
+  const filteredAircraft = allAircraft.filter((aircraft) => {
+    const callsign = String(aircraft.callsign ?? "").toLowerCase();
+
+    return callsign.includes(filterValue);
+  });
+
+  addAircraftToMap(filteredAircraft);
+}
+
+applyFilterButton.addEventListener("click", () => {
+  applyCallsignFilter();
+});
+
+clearFilterButton.addEventListener("click", () => {
+  callsignFilterEl.value = "";
+  addAircraftToMap(allAircraft);
+});
 
 loadSampleData();
