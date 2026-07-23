@@ -9,9 +9,17 @@ Format for each entry:
 
 ---
 
+## Callsign filter
+**What I added:** A filter bar (`#callsign-filter` input + Apply/Clear buttons) that narrows the map down to aircraft whose callsign matches what you type.
+
+**Bug 1:** `applyCallsignFilter()` and the two filter button listeners were defined *inside* `loadSampleData()` instead of at the top level. Since `loadSampleData()` re-runs every time the Refresh button is clicked, each refresh re-registered the listeners → clicking "Apply Filter" would run the filter multiple times (once per refresh so far), stacking up.
+**Fix:** Moved `applyCallsignFilter()` and both `addEventListener` calls out to the top level of `app.js` so they only register once, on initial page load.
+
+---
+
 ## Refresh button
 **What I added:** A button to re-fetch aircraft data on demand instead of only loading once on page load.
-**Bug?** None logged yet.
+**Bug?** None logged.
 **Fix:** —
 
 ---

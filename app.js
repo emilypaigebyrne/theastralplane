@@ -129,9 +129,9 @@ async function loadSampleData() {
 
     const aircraftList = await response.json();
 
-allAircraft = aircraftList;
+    allAircraft = aircraftList;
 
-addAircraftToMap(allAircraft);
+    addAircraftToMap(allAircraft);
   } catch (error) {
     console.error("Failed to load aircraft data:", error);
     aircraftDetailsEl.innerHTML = `
@@ -140,7 +140,9 @@ addAircraftToMap(allAircraft);
       </p>
     `;
   }
-  function applyCallsignFilter() {
+}
+
+function applyCallsignFilter() {
   const filterValue = callsignFilterEl.value.trim().toLowerCase();
 
   const filteredAircraft = allAircraft.filter((aircraft) => {
@@ -151,6 +153,7 @@ addAircraftToMap(allAircraft);
 
   addAircraftToMap(filteredAircraft);
 }
+
 applyFilterButton.addEventListener("click", () => {
   applyCallsignFilter();
 });
@@ -159,6 +162,5 @@ clearFilterButton.addEventListener("click", () => {
   callsignFilterEl.value = "";
   addAircraftToMap(allAircraft);
 });
-}
 
 loadSampleData();
